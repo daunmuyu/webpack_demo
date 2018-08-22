@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "coinant，推广页，内嵌页",
   "scripts": {
-    "start": "node bin/server.js",
-    "dev": "node bin/server.js",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --inline --progress --config bin/webpack.dev.config.js",
     "build": "rimraf dist && webpack --config bin/webpack.build.config.js"
   },
   "repository": {
@@ -15,7 +15,7 @@
     "coinant",
     "multipage"
   ],
-  "author": "chendapeng@niuguwang.com",
+  "author": "liulin@niuguwang.com",
   "license": "UNLICENSED",
   "devDependencies": {
     "autoprefixer": "^7.1.2",

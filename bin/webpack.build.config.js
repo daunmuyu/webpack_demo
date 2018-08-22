@@ -12,7 +12,7 @@ const config = merge(base, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: `[name].[chunkhash:8].js`
+    filename: `[name].[hash:8].js`
   },
   performance: {
     maxEntrypointSize: 300000,
@@ -27,8 +27,7 @@ const config = merge(base, {
             limit: 10000,
             name: '[path][name].[hash:8].[ext]',
             outputPath: (url) => {
-              const add = url.replace('src/pages', '');
-              return add;
+              return url.replace('src/pages', '');
             },
             publicPath: (url) => {
               return './img' + url.substr(url.lastIndexOf('/'));

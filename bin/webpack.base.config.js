@@ -4,17 +4,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const pagesPath = './src/pages/**/index.js';
-
-var pages = [];
-glob.sync(pagesPath).forEach(function (filepath) {
-  const dir = path.dirname(filepath);
-  const filename = dir.replace('./src/pages/', '') + '/index'
-  pages.push({
-    filename,
-    dir
-  });
-});
+const pages = require('./pages');
 
 const plugins = pages.map((page) => {
   return new HtmlWebpackPlugin({
@@ -65,6 +55,7 @@ module.exports = {
   resolve: {
     alias: {
       lib: path.resolve(__dirname, '../src/lib'),
+      vue: 'vue/dist/vue.js'
     },
     extensions: ['.js', '.json', '.vue'],
   }
