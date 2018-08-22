@@ -1,0 +1,224 @@
+/** ui规范 **/
+$c1: #ffffff;
+$c2: #bfbfbf;
+$c3: #f3f3f3;
+$c4: #485465;
+$c5: #f46f00;
+$f1: 0.85rem;
+$f2: 0.75rem;
+$f3: 0.7rem;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px
+}
+
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 17.07px !important
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 20px !important
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33px !important
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+del,
+ins {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: baseline;
+}
+
+sub {
+  vertical-align: baseline;
+}
+
+legend {
+  color: #000;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  *font-size: 100%;
+  -webkit-appearance: none;
+}
+
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+nav,
+section,
+figcaption,
+details,
+summary {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+details:not([open])>*:not(summary) {
+  display: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before {
+  content: '';
+  display: block;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+html,
+body{
+  font-family: 'PingFangSC-Regular', 'Arial', "Microsoft YaHei", sans-serif;;
+}

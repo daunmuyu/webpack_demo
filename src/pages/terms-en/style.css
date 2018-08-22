@@ -1,0 +1,45 @@
+body,
+div,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.terms-page {
+  .main {
+    padding: 0 10px;
+    background: rgba(31, 40, 51, 1);
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .agreement {
+    ul,
+    li {
+      margin: auto;
+      padding: auto;
+    }
+    ul {
+      padding-left: 40px;
+    }
+    li {
+      list-style: outside;
+      line-height: 1.5;
+    }
+  }
+  .agreement .agreementCon p,
+  .agreement .agreementCon ul {
+    font-size: 14px;
+    color: #828a99;
+    line-height: 24px;
+    padding-bottom: 24px;
+  }
+  .agreement .agreementCon p.agreementConSubHeader {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
