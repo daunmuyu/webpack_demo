@@ -1,0 +1,44 @@
+<div class="bottom-box">
+  <div class="prompt">
+    股市有风险，入市需谨慎
+  </div>
+  <div class="send-box-wrap">
+    <div class="item check-list">
+      <span>只看老师</span>
+    </div>
+    <div class="item textBox" >
+      <div class="enter-msg" id="txtMsg" contenteditable="true" placeholder="我来说两句...">
+      </div>
+    </div>
+    <div class="item face-icon">
+      <img src="./../../images//icon_face_02.png" alt="">
+    </div>
+    <div class="item am-vertical-align">
+      <mt-button size="small" class="am-vertical-align-bottom" type="primary">发送</mt-button>
+    </div>
+  </div>
+  <div class="face-box">
+    <div class="face-pannel">
+      <mt-swipe :auto="0" :continuous="false">
+        <mt-swipe-item>
+          <span :data-code="item" v-for="(item,index) in fillterCode(0)" class="icon">
+            <img  :data-code="item" :src="imgUrl(index)" alt=""></span>
+          <span data-code="delete" class="icon delete">
+            <img  data-code="delete" src="./../../images/emoji/delete.png" alt=""></span>
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <span :data-code="item" class="icon" v-for="(item,index) in fillterCode(1)">
+            <img  :data-code="item" :src="imgUrl(index, 1)" alt=""></span>
+          <span data-code="delete" class="icon delete">
+            <img data-code="delete" src="./../../images/emoji/delete.png" alt=""></span>
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <span :data-code="item" class="icon" v-for="(item,index) in fillterCode(2)">
+            <img :data-code="item" :src="imgUrl(index, 2)" alt=""></span>
+          <span data-code="delete" class="icon delete"><img data-code="delete" src="./../../images/emoji/delete.png" alt=""></span>
+        </mt-swipe-item>
+      </mt-swipe>
+    </div>   
+  </div>     
+</div>
+  

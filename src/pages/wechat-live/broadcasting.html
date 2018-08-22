@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="format-detection" content="telephone=no">
+  <title>直播室</title>
+  <script>
+    // growingIO
+    var _vds = _vds || [];
+    window._vds = _vds;
+    _vds.push(['setAccountId', 'b8e3914f8cbd753f']);
+    var vds = document.createElement('script');
+    vds.type = 'text/javascript';
+    vds.async = true;
+    vds.src = '//dn-growing.qbox.me/vds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(vds, s);
+  </script>
+  <script type="text/javascript">
+    // 腾讯统计
+    var _mtac = {};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500596128");
+
+      var s = document.getElementsByTagName("script")[1];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+    <script>  
+      function onBridgeReady() {  
+          WeixinJSBridge.call('hideOptionMenu');  
+      }  
+      if (typeof WeixinJSBridge == "undefined") {  
+          if (document.addEventListener) {  
+              document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);  
+          } else if (document.attachEvent) {  
+              document.attachEvent('WeixinJSBridgeReady', onBridgeReady);  
+              document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);  
+          }  
+      } else {  
+          onBridgeReady();  
+      }  
+  </script>
+  <script type="text/javascript" src="https://h5.niuguwang.com/cdn/js/flexble.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="wrapper">
+      <div class="video-wrapper" v-if="videoInfo.replayUrl">
+        <video id="liveVideo" class="video-js vjs-big-play-centered" autoplay preload="auto" :poster="videoInfo.cover" controls controlslist="nodownload"
+          width="100%" data-setup="{}" x5-video-player-type="h5">
+          <source :src="videoInfo.replayUrl" type="video/mp4" id="videoSource"></source>
+        </video>
+      </div>
+      <section class="fixed">
+        <div class="info-desc-wrap bg-white">
+          <div class="user-img">
+            <img :src="videoInfo.userLogoUrl" alt="">
+          </div>
+          <div class="name marginTop">{{videoInfo.userName}}</div>
+          <div class="more-info">
+            <template v-for="item in videoInfo.tagList">
+              <span class="funs">{{item.text}}</span>
+              <span class="split"></span>
+            </template>
+            <!-- <span class="average">月均&nbsp;123%</span> -->
+          </div>
+          <div class="desc">
+            简介：{{videoInfo.slogan}}
+          </div>
+        </div>
+        <div class="list-wrapper">
+          <div class="hot-video-list-wrap bg-white">
+            <div class="header">
+              更多精彩视频
+            </div>
+            <template v-if="videoInfo.videoList && videoInfo.videoList[0].length">
+              <div class="item" v-for="item in videoInfo.videoList[0]" @click="openVideo(item)">
+                <div class="cell">
+                  <img class="preview" :src="item.imgUrl || './images/img_link_001.png'" alt="">
+                  <div class="float-tip">
+                    <div class="shadow"></div>
+                    <div class="info">
+                      <i class="icon play"></i>{{item.timeSpan}}
+                    </div>
+                  </div>
+                </div>
+                <div class="cell">
+                  <div class="title">{{item.title}}</div>
+                  <div class="name">{{item.userName}}</div>
+                </div>
+              </div>
+            </template>
+            <template v-else>
+              <div>暂无推荐视频</div>
+            </template>
+          </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>     

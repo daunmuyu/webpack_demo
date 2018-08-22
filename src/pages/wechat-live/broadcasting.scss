@@ -1,0 +1,287 @@
+/*
+	px 转换 rem
+*/
+
+@function px2Rem($px) {
+  //$px为需要转换的字号
+  @return $px / 37.5px * 1rem;
+}
+
+@function size($px) {
+  //$px为需要转换的字号
+  @return $px / 75 * 1rem;
+}
+
+.wrapper {
+  color: #999;
+  font-size: 12px;
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  .video-wrapper {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background: #000;
+    width: 100%;
+    height: px2Rem(211px);
+    .video-js {
+      width: 100%;
+      height: px2Rem(211px);
+      .vjs-big-play-button {
+        height: 2em;
+        width: 2em;
+        line-height: 1.9em;
+        border-radius: 2em;
+        margin-left: -1em;
+      }
+    }
+  }
+  .fixed {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+  }
+  .video-name {
+    height: px2Rem(100px);
+    text-align: center;
+    line-height: px2Rem(100px);
+    font-weight: bold;
+    font-size: px2Rem(20px);
+    color: #333;
+  }
+  .list-wrapper {
+    color: #999;
+    font-size: 12px;
+    padding-bottom: 15px;
+    h5 {
+      text-indent: px2Rem(20px);
+    }
+    .video-list-banner {
+      display: block;
+      width: 100%;
+      height: size(290);
+    }
+    .list-content {
+      margin-left: size(40);
+      >li {
+        color: #999;
+        padding: size(40) size(32) size(40) 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        text-decoration: none;
+        .item-img {
+          width: size(226);
+          height: size(148);
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          margin-right: size(30);
+        }
+        .item-text {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          .title {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin: size(30) 0 size(24);
+          }
+          .label {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            span {
+              i {
+                display: inline-block;
+                margin-right: size(10);
+                padding: size(3) size(5);
+                line-height: 1;
+                font-size: 10px;
+                border: 1px solid #09b6f2;
+                color: #09b6f2;
+                text-align: center;
+              }
+              em {
+                line-height: size(18);
+              }
+            }
+          }
+        }
+      }
+    }
+    .more {
+      text-align: center;
+      padding-top: size(30);
+      i {
+        vertical-align: middle;
+        display: inline-block;
+        width: size(14);
+        height: size(14);
+        margin-left: size(8);
+        background-image: url("./images/jinr.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.info-desc-wrap {
+  padding-top: px2Rem(15px);
+  text-align: center;
+  padding-bottom: 16px;
+  .marginTop{
+    margin-top: 16px;
+  }
+  .user-img {
+    img{
+      width: 60px;
+      z-index: 100;
+      border-radius: 30px;
+    }
+    .btn-follow{
+      position: relative;
+      // background: url('../../../img/icon_btn_234.png') no-repeat;
+      background-size: 100% 100%;
+      width: 61px;
+      height: 37px;
+      color: #fff;
+      line-height: 35px;
+      margin: -15px auto 0;
+      z-index: 1000;
+    }
+  }
+  .name {
+    font-size: 16px;
+    color: #333;
+  }
+  .more-info {
+    font-size: 12px;
+    color: #333;
+    margin: 5px 0;
+    .split {
+      position: relative;
+      display: inline-block;
+      border-left: 1px solid #666;
+      width: 1px;
+      height: 12px;
+      top:1px;
+      margin: 0 5px;
+      &:last-child{
+        display: none;
+      }
+    }
+  }
+  .desc {
+    font-size: 12px;
+    color: #666;
+  }
+}
+
+.hot-video-list-wrap {
+  // padding: 16px
+  // margin-bottom: 16px;
+  .header {
+    font-size: 12px;
+    color: #666;
+    padding-left: 16px;
+    padding-top: 16px;
+  }
+  .item {
+    padding: 16px 0;
+    margin-left: 16px;
+    clear: both;
+    height: 70px;
+    &:after {
+      position: relative;
+      top: 86px;
+      content: ' ';
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #f7f7f7;
+    }
+    .cell {
+      display: inline-block;
+      float: left;
+      &:nth-child(1) {
+        width: 32%;
+        position: relative;
+        height: 70px;
+        overflow: hidden;
+      }
+      &:nth-child(2) {
+        width: 60%;
+        color: #333;
+        padding: 10px 10px 0;
+      }
+      .preview {
+        width: 100%;
+        height: 70px;
+      }
+      .float-tip {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        color: #fff;
+        height: 20px;
+        line-height: 20px;
+        font-size: 10px;
+        .shadow {
+          background: #000;
+          border-radius: 15px;
+          opacity: 0.5;
+          filter:alpha(opacity=50);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        .info {
+          position: relative;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          padding: 0 5px;
+          .play {
+            position: relative;
+            display: inline-block;
+            // background: url('../../img/btn_play_012.png') no-repeat;
+            background-size: 100% 100%;
+            width: 5px;
+            height: 6px;
+            margin-right: 2px;
+          }
+        }
+      }
+      .title {
+        height: 33px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+      .name {
+        font-size: 12px;
+        color: #666;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
