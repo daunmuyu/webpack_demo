@@ -1,0 +1,59 @@
+@import '../../lib/reset.css';
+
+$browser-default-font-size: 18.75px !default;
+/*
+	px 转换 rem
+*/
+@function pxToRem($px) {
+  //$px为需要转换的字号
+  @return $px / $browser-default-font-size * .5rem;
+}
+
+@media(-webkit-min-device-pixel-ratio: 2) {
+  .border-ios {
+    border-width: 0.5px !important;
+  }
+}
+
+/* 跳转页面动画 */  
+.slide-enter,  
+.slide_back-enter {  
+    position: absolute;  
+    width: 100%;  
+}  
+.slide-leave,  
+.slide_back-leave {  
+    position: absolute;  
+    width: 100%;  
+}  
+.slide-enter-active,  
+.slide_back-enter-active {  
+    transition: all 0.3s linear;  
+}  
+.slide-leave-active {  
+    position: absolute;  
+    transition: all 0.3s linear;  
+    transform: translate(-100%);  
+}  
+.slide-enter{  
+    transform: translateX(100%);  
+}  
+.slide_back-leave-active {  
+    position: absolute;  
+    transition: all 0.3s linear;  
+    transform: translate(100%);  
+}  
+.slide_back-enter {  
+    transform: translateX(-100%);  
+} 
+/* 跳转页面动画 */  
+
+#app {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+

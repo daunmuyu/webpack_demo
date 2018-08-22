@@ -1,0 +1,37 @@
+<div class="head-wrap head-anchor-wrap">
+    <template v-if="liveInfo.liveType === '2'">
+        <div class="video-wrap">
+          <video autoplay class="video-js vjs-default-ski live-video vjs-big-play-centered" id="liveVideo" controls='controls' webkit-playsinline x5-playsinline="" playsinline src="https://playback.stockhn.com/stockhnapp/yuanfp180316.mp4"></video>
+          <div v-show="showLogo" class="logo-loading">
+            <img src="./../../images/zb.gif" alt="">
+          </div>
+        </div>
+    </template>
+    <template v-else>
+      <!-- 图文top -->
+      <div class="anchor-card-wrap" v-clock>
+        <div class="info-wrap">
+          <div class="info-name">
+            <span>{{liveInfo.userName}}</span>
+            <template v-if="liveInfo.isWatcher != 1">
+              <span class="follow border-ios active" @click="followInit">+关注</span>
+            </template>
+            <template v-else>
+              <span class="follow border-ios" @click="followInit">已关注</span>
+            </template>
+          </div>
+          <div class="info-tags">
+            <template v-for="(item, idx) in liveInfo.tagList">
+              <span>{{item.text}}</span><b class="border-ios" v-if="idx !== (liveInfo.tagList.length - 1)"></b>
+            </template>
+          </div>
+          <div class="info-slogan">
+            {{liveInfo.liveName}}
+          </div>
+        </div>
+        <div class="anchor-line">
+          <img src="./../../images/line.png" alt=""> 
+        </div>
+      </div>
+    </template>
+  </div>

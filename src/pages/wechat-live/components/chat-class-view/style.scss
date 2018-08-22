@@ -1,0 +1,14 @@
+$browser-default-font-size: 18.75px !default;
+/*
+	px 转换 rem
+*/
+@function pxToRem($px) {
+  //$px为需要转换的字号
+  @return $px / $browser-default-font-size * .5rem;
+}
+
+@media(-webkit-min-device-pixel-ratio: 2) {
+  .border-ios {
+    border-width: 0.5px !important;
+  }
+}

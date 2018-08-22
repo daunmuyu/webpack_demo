@@ -1,0 +1,47 @@
+<div class="chat-info-view">
+  <div class="chat-history-view">
+
+    <div class="chat-record-pane">
+      <!-- <mt-loadmore :auto-fill="1==0" :bottom-method="pullUpLoad" :bottom-pull-text="''" :bottom-drop-text="''" :top-method="pullDownLoad" ref="loadmore">
+        <div class="msg-list">
+          <div class="item" :class="showRole(item)" v-for="item in chatMsgList" :key="item.time">
+            <template v-if="!item.itemType">
+              <div class="user-img">
+                <div class="img-wrap">
+                  <img :src="item.customInfo.userLogoUrl?item.customInfo.userLogoUrl:'./img/icon_user.png'" alt="">
+                </div>
+              </div>
+              <div class="user-content-wrap">
+                <div class="send">
+                  <div class="top">
+                    <div class="name"><span class="names">{{item.customInfo.userName}}</span><b class="niu" v-bind:class="addNames(item.customInfo.userIcons)"></b></div>
+                    <div class="time">{{timeFormat(item.time || item.customInfo.sendTime * 1000,'hh:mm')}}</div>
+                  </div>
+                  <div class="contBox">
+                    <div v-if="item.customInfo.contentFormat[0].type == 1" class="content" v-html="displayContent(item.customInfo.contentFormat[0].content || '')">
+                    </div>
+                    <div v-if="item.customInfo.contentFormat[0].type == 2" class="content">
+                      <img @click="previewImg(item.time)" :id="'img-cnt-' +item.time" class="content-img" :src="item.customInfo.contentFormat[0].src"
+                        alt="">
+                    </div>
+                    <div v-if="item.customInfo.sourceUserId" class="feedback">
+                      @{{item.customInfo.sourceUserName}}：<span v-html="displayContent(item.customInfo.sourceContent)"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <template v-if="item.itemType == 'security'">
+              <div v-if="item.safeTip.length > 0" class="tip-info"><span class="icon security"></span>{{item.safeTip}}</div>
+            </template>
+            <template v-if="item.itemType == 'notice'">
+              <div v-if="item.noticeTip.length> 0" class="notice-wrap"><span>直播公告：{{item.noticeTip}}</span><span class="icon notice"></span></div>
+            </template>
+          </div>
+        </div>
+      </mt-loadmore>  -->
+    </div>
+
+  </div>
+  <chat-info-send></chat-info-send>
+</div>

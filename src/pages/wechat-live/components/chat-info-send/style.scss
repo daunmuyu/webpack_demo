@@ -1,0 +1,135 @@
+$browser-default-font-size: 18.75px !default;
+/*
+	px 转换 rem
+*/
+@function pxToRem($px) {
+  //$px为需要转换的字号
+  @return $px / $browser-default-font-size * .5rem;
+}
+
+@media(-webkit-min-device-pixel-ratio: 2) {
+  .border-ios {
+    border-width: 0.5px !important;
+  }
+}
+
+
+* {
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  -webkit-appearance: none;
+  outline: none;
+}
+
+[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #999;
+  height: pxToRem(15px);
+  /* For Firefox */
+}
+
+.face-box {
+  display: none;
+  width: 100%;
+  background-color: #fff;
+  .face-pannel {
+    position: relative;
+    height: pxToRem(145px);
+    background: #fff;
+    width: pxToRem(320px);
+    margin: 0 auto;
+  
+    &.active,
+    &:focus {
+      background: #fff;
+    }
+  
+    .icon {
+      display: inline-block;
+      padding: pxToRem(5px) pxToRem(7px);
+      user-select: none;
+      img {
+        width: pxToRem(25px);
+      }
+    }
+  
+    .mint-swipe-item {
+      user-select: none;
+      .delete {
+        position: absolute;
+        bottom: pxToRem(32px);
+        right: pxToRem(8px);
+      }
+    }
+  }
+  
+  .mint-swipe-indicator.is-active {
+    background: #000;
+    opacity: 0.6;
+  }
+}
+
+
+.bottom-box {
+  width: 100%;
+  background: rgb(235, 235, 235);
+  .prompt {
+    background-color: #fcf;
+    padding: pxToRem(4px) pxToRem(15px);
+    text-align: center;
+    font-size: pxToRem(10px);
+    line-height: 1.6;
+    color: #666;
+  }
+  .send-box-wrap {
+    width: 100%;
+    min-height: pxToRem(55px);
+    padding: pxToRem(6px) pxToRem(15px) pxToRem(10px);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items:flex-end;
+    .item {
+      bottom: pxToRem(10px);
+      color: #333;
+      &.am-vertical-align {
+        padding-left: pxToRem(10px);
+        display: none;
+      }
+      &.face-icon {
+        padding-left: pxToRem(10px);
+        img {
+          display: block;
+          width: pxToRem(32px);
+          margin: 0 auto;
+        }
+      }
+      &.textBox {
+        flex: 1;
+        overflow: hidden;
+        .enter-msg {
+          width: 100%;
+          max-height: pxToRem(60px);
+          overflow-y: scroll;
+          background-color: #fdfdfd;
+          padding: pxToRem(8px) pxToRem(10px);
+          border-radius: pxToRem(15px);
+        }
+      }
+      &.check-list {
+        line-height: pxToRem(30px);
+        span {
+          padding: 0 pxToRem(12px) 0 pxToRem(20px);
+          background-image: url('./../../images/choose@2x.png');
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: pxToRem(16px) pxToRem(16px);
+          font-size: pxToRem(14px);
+          &.active {
+            background-image: url('./../../images/21@2x.png');
+          }
+        }
+      }
+    }
+  }
+}
