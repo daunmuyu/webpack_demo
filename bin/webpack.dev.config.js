@@ -30,7 +30,7 @@ const config = merge(base, {
               return url.replace('src/pages', '');
             },
             publicPath: (url) => {
-              return './img' + url.substr(url.lastIndexOf('/'));
+              return '.'+ url.substr(url.indexOf('/', 10));
             }
           }
         }],

@@ -1,10 +1,10 @@
-# COINANT多页项目
+# WEBPACK4_DEMO多页项目
 
-> COINANT活动页，推广页，内嵌页
+> WEBPACK4_DEMO
 
 **技术栈**
 
-* webpack2.0
+* webpack4.0
 * es6
 * scss
 * postcss
@@ -22,10 +22,6 @@ npm start / npm run dev
 yarn run build
 npm run build
 ```
-
-**项目部署**
-
-- 测试: svn://192.168.92.101/webfiles/inline.coinant.io
 
 **命名规范**
 
