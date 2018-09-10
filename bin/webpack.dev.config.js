@@ -27,7 +27,7 @@ const config = merge(base, {
             limit: 10000,
             name: '[path][name].[hash:8].[ext]',
             outputPath: (url) => {
-              return url.replace('src/pages', '');
+              return url.replace('src/pages', '.');
             },
             publicPath: (url) => {
               return '.'+ url.substr(url.indexOf('/', 10));
@@ -60,25 +60,9 @@ const config = merge(base, {
     new ExtractTextPlugin({
       filename: '[name].[hash:8].css'
     }),
-    // // extract vendor chunks for better caching
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   minChunks: function (module) {
-    //     // a module is extracted into the vendor chunk if...
-    //     return (
-    //       // it's inside node_modules
-    //       /node_modules/.test(module.context) &&
-    //       // and not a CSS file (due to extract-text-webpack-plugin limitation)
-    //       !/\.css$/.test(module.request)
-    //     )
-    //   }
-    // }),
+
     new FriendlyErrorsPlugin(),
-    // 静态文件拷贝
-    // new CopyWebpackPlugin([{
-    //   context: './src/pages',
-    //   from: '**/img/**',
-    // }]),
+
     new CopyWebpackPlugin([{
       context: './src/static',
       from: '**',
