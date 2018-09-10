@@ -1,0 +1,14 @@
+{
+  "random": true,
+  "baseScript": [
+    "alloy_finger.js"
+  ],
+
+  "mobile":[
+
+  ],
+  "baseStyle": [
+
+  ],
+  "cdn": ""
+}

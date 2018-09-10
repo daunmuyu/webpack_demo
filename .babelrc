@@ -1,4 +1,9 @@
 {
-  "presets": ["es2015", "stage-0"],
-  "plugins": ["transform-runtime"]
+  "presets": ["latest","es2015", "stage-0"],
+  "plugins": [
+    ["component", [{
+      "libraryName": "mint-ui",
+      "style": true
+    }]]
+  ]
 }

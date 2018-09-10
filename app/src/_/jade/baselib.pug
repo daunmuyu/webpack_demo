@@ -1,0 +1,5 @@
+- var complie = htmlWebpackPlugin.options.globalConfig
+- var src = complie.cdn || '../../plugins/'
+- var map = complie.baseScript || []
+each item in map
+  script(type="text/javascript",src=src+item)

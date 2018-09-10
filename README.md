@@ -1,34 +1,32 @@
-# WEBPACK4_DEMO多页项目
+# 项目发布日志
 
-> WEBPACK4_DEMO
+> 每次发布记得写发布日志，最新的写在最上面
 
-**技术栈**
 
-* webpack4.0
-* es6
-* scss
-* postcss
 
-**项目配置项**
-``` bash
-# 项目初始化
-yarn
-npm install
-# 项目启动
-yarn start / yarn run dev
-npm start / npm run dev
 
-# 项目发布
-yarn run build
-npm run build
-```
 
-**命名规范**
 
-- 文件名：
-单词用‘-’隔开，如：customer-service
-**(文件名中严禁出现大写字字母和下划线)**
 
-- 变量名：
-使用小驼峰命名，如：customerService
+
+
+
+
+
+*	2016-6-10
+	*	内容：
+		*	a页面
+		*	比页面
+		
+		其他备注
+		
+	*	线上地址: 	
+
+
+*	2015-9-10
+	*	内容：
+		*	a页面
+		*	比页面
+	*	线上地址: 	
+
 

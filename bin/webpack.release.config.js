@@ -3,7 +3,6 @@ const path = require('path');
 const getEntry = require('./getEntry.js');
 const complie = require('./complie.js');
 const alias = require('../app/plugin_alias.js');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const containerPath = path.resolve('./');
 
@@ -20,40 +19,35 @@ globalConfig = complie(globalConfig);
 // 获取所有js入口
 const entrys = getEntry('./app/src/*/*/*.js');
 // 获取所有页面
-const pages = getEntry('./app/src/*/*/*.pug');
+// var pages = getEntry('./app/src/*/*/*.pug');
 
 // webpack处理的插件
 const plugins = [];
 plugins.push(extractSASS);
-// HMR 模块
-plugins.push(new webpack.HotModuleReplacementPlugin());
 plugins.push(
-  new OpenBrowserPlugin({
-    url: 'http://localhost:8066',
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false,
+    },
   })
 );
 
-// 处理pug页面
-for (const chunkname in pages) {
-  const conf = {
-    filename: `${chunkname}.html`,
-    template: pages[chunkname],
-    inject: true,
-    minify: {
-      removeComments: true,
-      collapseWhitespace: false,
-    },
-    chunks: [chunkname],
-    hash: true,
-    globalConfig,
-  };
-  plugins.push(new HtmlWebpackPlugin(conf));
-}
-
-function getFileName(name) {
-  const arr = name.split('/');
-  return `${arr[arr.length - 1]}.js`;
-}
+// // 处理pug页面
+// for (var chunkname in pages) {
+//   var conf = {
+//     filename: chunkname + '.html',
+//     template: pages[chunkname],
+//     inject: true,
+//     minify: {
+//       removeComments: true,
+//       collapseWhitespace: false
+//     },
+//     chunks: [chunkname],
+//     hash: true,
+//     globalConfig: globalConfig
+//   }
+//   plugins.push(new HtmlWebpackPlugin(conf));
+// }
 
 /**
  * 配置webpack
@@ -61,31 +55,29 @@ function getFileName(name) {
 const config = {
   entry: entrys,
   output: {
-    path: path.resolve(containerPath, './app/www/'),
+    path: path.resolve(containerPath, './dist/'),
     filename: '[name].js',
   },
-  devtool: 'source-map',
+  devtool: false,
   module: {
-    preLoaders: [
+    loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel-loader', 'eslint-loader'],
+        loaders: ['babel-loader'],
         exclude: /(node_modules)|(plugins)/,
       },
-    ],
-    loaders: [
       {
         test: /\.html$/,
         loader: 'raw',
-      },
-      {
-        test: /\.scss$/,
-        loader: extractSASS.extract(['css!postcss', 'sass']),
-        exclude: /(node_modules)/,
+        exclude: /(node_modules)|(plugins)/,
       },
       {
         test: /\.css$/,
         loader: extractSASS.extract(['css!postcss']),
+      },
+      {
+        test: /\.scss$/i,
+        loader: extractSASS.extract(['css!postcss', 'sass']),
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -111,13 +103,13 @@ const config = {
       },
     ],
   },
+  plugins,
   postcss: () => {
     return [require('autoprefixer')];
   },
-  plugins,
   resolve: {
     alias,
-    extensions: ['', '.js', '.css', '.scss', '.pug', '.png', '.jpg', '.svg'],
+    extensions: ['', '.js', '.css', '.scss', '.pug', '.png', '.jpg'],
   },
   externals: {},
 };

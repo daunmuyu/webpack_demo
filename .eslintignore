@@ -1,4 +1,9 @@
 bin
 node_modules
+
+app/src/_
+app/src/plugins/**
 dist
 
+gulpfile.js
+plugin_alias.js
