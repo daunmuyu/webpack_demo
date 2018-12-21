@@ -3,6 +3,8 @@ const glob = require('glob')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const alias = require('./alias')
 
 // const pages = require('./pages');
 const pagedir = './src/pages';
@@ -72,12 +74,12 @@ module.exports = {
       },
     ]
   },
-  plugins: plugins,
+  plugins: [
+    new VueLoaderPlugin(),
+    ...plugins
+  ],
   resolve: {
-    alias: {
-      lib: path.resolve(__dirname, '../src/lib'),
-      vue: 'vue/dist/vue.js'
-    },
+    alias,
     extensions: ['.js', '.json', '.css', '.scss', '.pug', '.png', '.jpg', '.svg'],
   }
 }
