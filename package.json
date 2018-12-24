@@ -1,7 +1,7 @@
 {
-  "name": "niugu-course",
+  "name": "webpack_demo",
   "version": "1.0.0",
-  "description": "niugu-course webpack4",
+  "description": "webpack_demo webpack4",
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --inline --progress --config bin/webpack.dev.config.js",
@@ -71,7 +71,6 @@
     "whatwg-fetch": "^2.0.3"
   },
   "dependencies": {
-    "astockbridge": "git+ssh://git@gitlab.niuguwang.com:Project/aStockBridge.git",
     "axios": "^0.17.1",
     "clipboard": "^2.0.4",
     "jquery": "^3.2.1",
@@ -80,7 +79,6 @@
     "mint-ui": "^2.2.9",
     "moment": "^2.22.2",
     "muse-ui": "^3.0.1",
-    "ng-bridge": "git+ssh://git@gitlab.niuguwang.com:Project/ng-bridge.git",
     "node-sass": "^4.11.0",
     "normalize.css": "^7.0.0",
     "qs": "^6.5.1",
