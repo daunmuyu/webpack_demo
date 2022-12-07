@@ -76,7 +76,7 @@
     "mint-ui": "^2.2.9",
     "moment": "^2.22.2",
     "normalize.css": "^7.0.0",
-    "qs": "^6.5.1",
+    "qs": "^6.5.3",
     "signature_pad": "^1.6.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
